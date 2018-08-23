@@ -1,5 +1,5 @@
-<script src='SpringSlider.js'></script>
-<link rel="stylesheet" href="SpringSlider.css">
+<script src='springslider.js'></script>
+<link rel="stylesheet" href="springslider.css">
 
 # Examples
 
