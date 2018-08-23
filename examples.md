@@ -8,11 +8,13 @@
 
 # Examples
 
-Default parameters:
+Default parameters (except color):
 
 <div id='slider-1'></div>
 <script>
-document.querySelector('#slider-1').appendChild(SpringSlider())
+document.querySelector('#slider-1').appendChild(SpringSlider({
+    color: 'rgb(244, 82, 82)'
+}))
 </script>
 
 Zero percent elastic, acceleration only (ease):
@@ -21,7 +23,8 @@ Zero percent elastic, acceleration only (ease):
 <script>
 document.querySelector('#slider-2').appendChild(SpringSlider({
     elastic: 0,
-    acceleration: 0.1
+    acceleration: 0.1,
+    color: 'rgb(244, 150, 82)'
 }))
 </script>
 
@@ -31,7 +34,8 @@ Full acceleration and no elasticity, snaps to target value:
 <script>
 document.querySelector('#slider-3').appendChild(SpringSlider({
     elastic: 0,
-    acceleration: 1
+    acceleration: 1,
+    color: 'rgb(244, 213, 82)'
 }))
 </script>
 
@@ -44,7 +48,8 @@ document.querySelector('#slider-4').appendChild(SpringSlider({
     acceleration: 0.05,
     elastic: 0.9,
     walls: false,
-    padding: 0
+    padding: 0,
+    color: 'rgb(89, 228, 107)'
 }))
 </script>
 
@@ -54,7 +59,8 @@ Slider with walls and 100% elasticity:
 <script>
 document.querySelector('#slider-5').appendChild(SpringSlider({
     elastic: 1,
-    walls: true
+    walls: true,
+    color: 'rgb(89, 100, 245)'
 }))
 </script>
 
@@ -68,6 +74,7 @@ document.querySelector('#slider-6').appendChild(SpringSlider({
     min: 0,
     max: 100,
     walls: false,
-    output: x => ele.innerText = Math.floor(x)
+    output: x => ele.innerText = Math.round(x),
+    color: 'rgb(193, 92, 255)'
 }))
 </script>
