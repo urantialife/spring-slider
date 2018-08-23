@@ -5,6 +5,12 @@ variables, a sudden jump in value when interacting can make it hard to understan
 Spring slider aims to help with this by providing customisable canvas based sliders
 that smoothly transition from one value to another using either eases or spring-like motion.
 
+Check out the [examples!](https://spaciecat.github.io/spring-slider/examples)
+
+# TODO
+
+- [] Support mobile and touch
+
 # Documentation
 
 ## Main function
