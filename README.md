@@ -9,7 +9,7 @@ Check out the [examples!](https://spaciecat.github.io/spring-slider/examples)
 
 # TODO
 
-- [] Support mobile and touch
+- [ ] Support mobile and touch
 
 # Documentation
 
