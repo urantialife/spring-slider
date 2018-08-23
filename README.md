@@ -74,7 +74,7 @@ between `0` being never approaching and `1` being immediately snapping to the ta
 ```javascript
 // This slider quickly approaches the target value
 SpringSlider({
-  acceleration: 0.1
+    acceleration: 0.1
 })
 ```
 
@@ -87,7 +87,7 @@ The elastic option is the fraction of the slider head's velocity remains after e
 ```javascript
 // This slider has no elasticity and will just ease toward the target
 SpringSlider({
-  elastic: 0
+    elastic: 0
 })
 ```
 
@@ -100,9 +100,9 @@ If true, the slider's head will not be able to pass the lower and upper bounds o
 ```javascript
 // This slider is super springy and has no walls
 SpringSlider({
-  acceleration: 0.05,
-  elastic: 0.9,
-  walls: false
+    acceleration: 0.05,
+    elastic: 0.9,
+    walls: false
 })
 ```
 
