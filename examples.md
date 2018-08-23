@@ -65,7 +65,9 @@ Current value: <span id='slider-6-val'></span>
 <script>
 const ele = document.querySelector('#slider-6-val')
 document.querySelector('#slider-6').appendChild(SpringSlider({
+    min: 0,
+    max: 100,
     walls: false,
-    output: x => ele.innerText = x
+    output: x => ele.innerText = Math.floor(x)
 }))
 </script>
