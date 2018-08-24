@@ -75,11 +75,11 @@ function SpringSlider({walls = true, min = 0, max = 1, output = null, value = 0.
         if(walls){
             if(value <= 0) {
                 value = 0
-                valV = 0
+                valV *= -1
             }
             if(value >= 1) {
                 value = 1
-                valV = 0
+                valV *= -1
             }
         }
         draw()
