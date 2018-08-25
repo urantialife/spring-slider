@@ -48,23 +48,48 @@ function SpringSlider({walls = true, min = 0, max = 1, output = null, value = 0.
 
     let dragging = false
 
-    function updateFromEvent(event){
+    function updateFromMoveEvent(event){
+        event.preventDefault()
         if(!dragging) return
         const rect = canvas.getBoundingClientRect()
         let x = (event.clientX - rect.left ) * (canvas.width / canvas.clientWidth)
         if(x < padding + radius) x = padding + radius
         if(x > canvas.width - padding - radius) x = canvas.width - padding - radius
         targetValue = map(x, padding + radius, canvas.width - padding - radius, 0, 1)
+        draw()
     }
+
+    function updateFromTouchMoveEvent(event){
+        if(!dragging) return
+        event.preventDefault()
+        const rect = canvas.getBoundingClientRect()
+        let x = (event.touches[0].clientX - rect.left ) * (canvas.width / canvas.clientWidth)
+        if(x < padding + radius) x = padding + radius
+        if(x > canvas.width - padding - radius) x = canvas.width - padding - radius
+        targetValue = map(x, padding + radius, canvas.width - padding - radius, 0, 1)
+        draw()
+    }
+
+    canvas.addEventListener('touchstart', event => {
+        event.preventDefault()
+        dragging = true
+        updateFromTouchMoveEvent(event)
+    })
+    canvas.addEventListener('touchend', event => {
+      event.preventDefault()
+      dragging = false
+    })
+    canvas.addEventListener('touchmove', updateFromTouchMoveEvent)
 
     canvas.addEventListener('mousedown', event => {
         dragging = true
-        updateFromEvent(event)
+        updateFromMoveEvent(event)
     })
     canvas.addEventListener('mouseup', () => dragging = false)
-    canvas.addEventListener('mousemove', updateFromEvent)
+    canvas.addEventListener('mousemove', updateFromMoveEvent)
+    window.addEventListener('mouseup', () => dragging = false)
 
-    // Smooth values and ad velocity
+    // Smooth values and add velocity
 
     let valV = 0
 
